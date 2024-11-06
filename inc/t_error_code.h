@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 12:41:41 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/11/06 13:06:49 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/11/06 14:53:00 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef enum e_error_code
 	CMD_NO_EXIST,
 	CMD_NO_PERMS,
 	BAD_CMD_NAME,
+	PIPE_ERROR,
 }	t_error_code;
 
 #endif
