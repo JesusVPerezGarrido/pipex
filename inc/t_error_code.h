@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   t_error_code.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 10:50:57 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/11/06 12:42:38 by jeperez-         ###   ########.fr       */
+/*   Created: 2024/11/06 12:41:41 by jeperez-          #+#    #+#             */
+/*   Updated: 2024/11/06 13:06:49 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#ifndef T_ERROR_CODE_H
+# define T_ERROR_CODE_H
 
-# include "libft.h"
-# include "t_error_code.h"
-# include "fcntl.h"
-# include "sys/wait.h"
+typedef enum e_error_code
+{
+	OK,
+	ARG_NUM,
+	FILE_NO_EXIST,
+	FILE_NO_PERMS,
+	BAD_FILENAME,
+	CMD_NO_EXIST,
+	CMD_NO_PERMS,
+	BAD_CMD_NAME,
+}	t_error_code;
 
-# define CMD_DIR "/bin/:/usr/bin/:/sbin/:/usr/sbin"
 #endif
