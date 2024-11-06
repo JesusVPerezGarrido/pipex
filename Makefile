@@ -10,7 +10,10 @@ INCS		:=	-I ./inc \
 
 LIBS		:=	$(LIBFT_DIR)/libft.a
 
-SRCS		:=	src/pipex.c
+SRCS		:=	src/pipex.c \
+				src/validation.c \
+				src/ft_end.c \
+				src/pipex_utils.c
 
 OBJS		:=	$(patsubst src%, obj%, $(SRCS:.c=.o))
 
