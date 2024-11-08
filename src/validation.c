@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 16:43:08 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/11/06 16:45:59 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/11/08 13:08:00 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,8 @@
 
 static void	valid_cmd(char *full_cmd)
 {
-	char	*cmd_path;
-
 	if (!full_cmd || !full_cmd[0])
 		ft_end(BAD_CMD_NAME);
-	cmd_path = get_cmd_path(full_cmd);
-	if (!cmd_path)
-		ft_end(CMD_NO_EXIST);
-	if (access(cmd_path, X_OK) == -1)
-	{
-		free(cmd_path);
-		ft_end(CMD_NO_PERMS);
-	}
-	free(cmd_path);
 }
 
 static void	valid_file(char *file_name, t_bool out)

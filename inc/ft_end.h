@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 12:41:41 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/11/06 16:52:00 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/11/08 13:02:48 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ typedef enum e_error_code
 	CMD_NO_PERMS,
 	BAD_CMD_NAME,
 	PIPE_ERROR,
+	OPEN_ERROR,
+	MALLOC_ERROR,
+	EXEC_ERROR,
 }	t_error_code;
 
 void	ft_end(t_error_code code);
