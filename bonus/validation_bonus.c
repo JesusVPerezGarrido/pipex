@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 16:43:08 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/11/12 13:37:15 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/11/12 14:13:49 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	valid_cmd(char *full_cmd)
 {
 	char	*cmd_path;
-	
+
 	if (!full_cmd || !full_cmd[0])
 	{
 		ft_putendl_fd("szh: permission denied: ", STDERR_FILENO);

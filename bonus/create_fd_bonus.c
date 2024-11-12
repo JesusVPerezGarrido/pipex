@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 11:47:19 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/11/12 13:50:51 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/11/12 14:13:54 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	create_fd(t_fdbundle *fd, int argc, char **argv)
 	fd->input = open(argv[1], O_RDONLY);
 	if (fd->input == -1)
 		ft_end(OPEN_ERROR);
-	while(access(argv[argc -1], F_OK) == 0)
+	while (access(argv[argc -1], F_OK) == 0)
 		unlink(argv[argc - 1]);
 	fd->output = open(argv[argc - 1], O_CREAT | O_WRONLY, 00644);
 	if (fd->output == -1)

@@ -26,8 +26,7 @@ B_SRCS		:=	$(addprefix bonus/, \
 				ft_end_bonus.c \
 				pipex_bonus.c \
 				pipex_utils_bonus.c \
-				validation_bonus.c \
-				clean_fd_bonus.c )
+				validation_bonus.c )
 
 OBJS		:=	$(patsubst src%, obj%, $(SRCS:.c=.o))
 B_OBJS		:=	$(patsubst bonus%, obj%, $(B_SRCS:.c=.o))

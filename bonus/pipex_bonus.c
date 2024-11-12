@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 10:51:41 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/11/12 14:09:35 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/11/12 14:13:44 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ static void	first_child(int in_fd, t_pipe pipe, char *full_cmd, char **envp)
 static void	middle_child(t_pipe pipe_in, t_pipe pipe_out, char *full_cmd, \
 	char **envp)
 {
-	create_child(pipe_in.pipe[STDIN_FILENO], pipe_out.pipe[STDOUT_FILENO], full_cmd, \
-		envp);
+	create_child(pipe_in.pipe[STDIN_FILENO], pipe_out.pipe[STDOUT_FILENO], \
+		full_cmd, envp);
 	close(pipe_in.pipe[STDIN_FILENO]);
 	close(pipe_out.pipe[STDOUT_FILENO]);
 }
@@ -50,9 +50,10 @@ int	main(int argc, char **argv, char **envp)
 		else if (index == argc - 4)
 			last_child(fd.pipe[index - 1], fd.output, argv[index + 2], envp);
 		else
-			middle_child(fd.pipe[index - 1], fd.pipe[index], argv[index + 2], envp);
+			middle_child(fd.pipe[index - 1], fd.pipe[index], argv[index + 2], \
+				envp);
 		index++;
 	}
-	//clean_fd(fd, argc - 4);
+	free(fd.pipe);
 	ft_end(OK);
 }
