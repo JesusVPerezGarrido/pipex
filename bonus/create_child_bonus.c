@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_end.c                                           :+:      :+:    :+:   */
+/*   create_child_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 16:44:08 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/11/12 11:29:12 by jeperez-         ###   ########.fr       */
+/*   Created: 2024/11/12 12:02:20 by jeperez-          #+#    #+#             */
+/*   Updated: 2024/11/12 12:11:33 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "pipex_bonus.h"
 
-void	ft_end(t_error_code code)
+void	create_child(int infd, int outfd, char *fullcmd, char **envp)
 {
-	if (code != OK && code != EXEC_ERROR)
+	pid_t	pid;
+
+	pid = fork();
+	if (!pid)
 	{
-		ft_printf("Error code: %i\n", code);
-		exit(code);
+		child_fds(infd, outfd);
+		execute_cmd(fullcmd, envp);
 	}
-	exit(0);
 }

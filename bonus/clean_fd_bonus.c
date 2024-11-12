@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_end.h                                           :+:      :+:    :+:   */
+/*   clean_fd_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 12:41:41 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/11/08 13:02:48 by jeperez-         ###   ########.fr       */
+/*   Created: 2024/11/12 13:39:18 by jeperez-          #+#    #+#             */
+/*   Updated: 2024/11/12 13:40:50 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_END_H
-# define FT_END_H
+#include "pipex_bonus.h"
 
-# include "libft.h"
-
-typedef enum e_error_code
+void	clean_fd(t_fdbundle fd, int npipe)
 {
-	OK,
-	ARG_NUM,
-	FILE_NO_EXIST,
-	FILE_NO_PERMS,
-	BAD_FILENAME,
-	CMD_NO_EXIST,
-	CMD_NO_PERMS,
-	BAD_CMD_NAME,
-	PIPE_ERROR,
-	OPEN_ERROR,
-	MALLOC_ERROR,
-	EXEC_ERROR,
-}	t_error_code;
+	int	index;
 
-void	ft_end(t_error_code code);
-
-#endif
+	close(fd.input);
+	close(fd.output);
+	index = 0;
+	while (index < npipe)
+	{
+		close(fd.pipe[index].pipe[0]);
+		close(fd.pipe[index].pipe[1]);
+		index++;
+	}
+}

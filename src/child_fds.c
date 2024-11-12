@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   validation.h                                       :+:      :+:    :+:   */
+/*   child_fds.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 16:45:13 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/11/06 16:51:09 by jeperez-         ###   ########.fr       */
+/*   Created: 2024/11/11 10:55:42 by jeperez-          #+#    #+#             */
+/*   Updated: 2024/11/11 11:04:03 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VALIDATION_H
-# define VALIDATION_H
+#include "pipex.h"
 
-# include "ft_end.h"
-# include "libft.h"
-# include "pipex_utils.h"
-
-void	validate_args(int argc, char **argv);
-
-#endif
+void	child_fds(int in, int out)
+{
+	dup2(in, STDIN_FILENO);
+	dup2(out, STDOUT_FILENO);
+}

@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_end.c                                           :+:      :+:    :+:   */
+/*   execute_cmd.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 16:44:08 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/11/12 11:29:12 by jeperez-         ###   ########.fr       */
+/*   Created: 2024/11/11 10:42:07 by jeperez-          #+#    #+#             */
+/*   Updated: 2024/11/11 10:57:58 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-void	ft_end(t_error_code code)
+void	execute_cmd(char *full_cmd, char **envp)
 {
-	if (code != OK && code != EXEC_ERROR)
+	char	**cmd_args;
+	char	*cmd_name;
+
+	cmd_name = get_cmd_path(full_cmd);
+	cmd_args = ft_split(full_cmd, ' ');
+	if (cmd_name)
 	{
-		ft_printf("Error code: %i\n", code);
-		exit(code);
+		free(cmd_args[0]);
+		cmd_args[0] = cmd_name;
 	}
-	exit(0);
+	if (execve(cmd_args[0], cmd_args, envp) == -1)
+	{
+		free_matrix(cmd_args);
+		ft_end(EXEC_ERROR);
+	}
 }

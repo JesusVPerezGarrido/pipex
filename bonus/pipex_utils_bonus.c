@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex_utils.c                                      :+:      :+:    :+:   */
+/*   pipex_utils_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 16:43:39 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/11/12 11:29:17 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/11/12 13:12:54 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "pipex_bonus.h"
 
 void	free_matrix(char **matrix)
 {
@@ -46,7 +46,7 @@ static char	*test_path(char **path_matrix, char *cmd_name)
 	index = 0;
 	while (path_matrix[index])
 	{
-		cmd_path = ft_strjoin(path_matrix[index], cmd_name);
+		cmd_path = ft_freejoin(ft_strjoin(path_matrix[index], "/"), cmd_name);
 		if (access(cmd_path, F_OK) == 0)
 		{
 			return (cmd_path);

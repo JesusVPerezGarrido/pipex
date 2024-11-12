@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex_utils.h                                      :+:      :+:    :+:   */
+/*   child_fds_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 16:46:35 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/11/06 16:52:06 by jeperez-         ###   ########.fr       */
+/*   Created: 2024/11/11 10:55:42 by jeperez-          #+#    #+#             */
+/*   Updated: 2024/11/12 11:29:53 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_UTILS_H
-# define PIPEX_UTILS_H
+#include "pipex_bonus.h"
 
-# include "ft_end.h"
-# include "libft.h"
-
-# define CMD_DIR "/bin/:/usr/bin/:/sbin/:/usr/sbin"
-
-void	free_matrix(char **matrix);
-char	*get_cmd_name(char *full_cmd);
-char	*get_cmd_path(char *full_cmd);
-
-#endif
+void	child_fds(int in, int out)
+{
+	dup2(in, STDIN_FILENO);
+	dup2(out, STDOUT_FILENO);
+}
