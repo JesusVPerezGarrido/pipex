@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 16:43:39 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/11/12 13:12:54 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/11/18 11:37:35 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,10 @@ static char	*test_path(char **path_matrix, char *cmd_name)
 	char	*cmd_path;
 
 	index = 0;
+	if (access(cmd_name, F_OK) == 0)
+	{
+		return (ft_strdup(cmd_name));
+	}
 	while (path_matrix[index])
 	{
 		cmd_path = ft_freejoin(ft_strjoin(path_matrix[index], "/"), cmd_name);

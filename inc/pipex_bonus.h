@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 10:50:57 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/11/12 13:41:04 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/11/18 11:21:10 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ typedef struct s_fdbundle
 	int		output;
 }			t_fdbundle;
 
-void	ft_end(t_error_code code);
+void	ft_end(t_error_code code, ...);
 void	free_matrix(char **matrix);
 char	*get_cmd_name(char *full_cmd);
 char	*get_cmd_path(char *full_cmd);

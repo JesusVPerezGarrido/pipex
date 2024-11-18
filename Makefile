@@ -35,7 +35,7 @@ all: libft obj $(NAME)
 
 bonus: libft obj bonus_exec
 
-bonus_exec: $(B_OBJS)
+bonus_exec:  $(NAME) $(B_OBJS)
 	@rm -f $(NAME)
 	@$(CC) $(CFLAGS) $(B_OBJS) $(LIBS) -o $(NAME) && printf "Compiling: $(NAME) with bonus\n"
 
