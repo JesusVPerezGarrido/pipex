@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 10:50:57 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/11/18 11:21:10 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/11/28 10:04:08 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@
 # include <fcntl.h>
 # include <sys/wait.h>
 
-# define CMD_DIR "/home/jeperez-/bin:/home/jeperez-/bin:/home/jeperez-/.cargo/bin:/usr/local/cargo/bin:/home/jeperez-/.opam/default/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin"
+# define CMD_DIR "/home/jeperez-/bin:/home/jeperez-/bin:/home/jeperez-/.cargo/ \
+bin:/usr/local/cargo/bin:/home/jeperez-/.opam/default/bin:/usr/local/sbin:/usr \
+/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin \
+:/usr/local/go/bin"
 
 typedef enum e_error_code
 {
