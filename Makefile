@@ -8,7 +8,7 @@ LIBFT_DIR	:=	./lib/libft
 LIBFT		:=	$(LIBFT_DIR)/libft.a
 
 INCS		:=	-I ./inc \
-				-I $(LIBFT_DIR)
+				-I $(LIBFT_DIR)/inc
 
 LIBS		:=	$(LIBFT)
 

@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 10:51:41 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/11/12 14:13:44 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/12/03 13:52:39 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,5 @@ int	main(int argc, char **argv, char **envp)
 		index++;
 	}
 	free(fd.pipe);
-	ft_end(OK);
+	ft_end(OK, 0);
 }

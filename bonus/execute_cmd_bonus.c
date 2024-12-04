@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 10:42:07 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/11/12 13:09:19 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/12/03 13:52:22 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ void	execute_cmd(char *full_cmd, char **envp)
 	if (execve(cmd_args[0], cmd_args, envp) == -1)
 	{
 		free_matrix(cmd_args);
-		ft_end(EXEC_ERROR);
+		ft_end(EXEC_ERROR, 0);
 	}
 }
